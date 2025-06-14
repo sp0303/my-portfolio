@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sharat Patnayakuni - Full Stack Developer with 5 years of experience in web development. Specializing in React, Node.js, and modern web technologies.">
+  <meta name="keywords" content="Full Stack Developer, Web Developer, JavaScript, React, Node.js, Portfolio">
+  <meta name="author" content="Sharat Patnayakuni">
+  <meta property="og:title" content="Sharat Patnayakuni - Full Stack Developer">
+  <meta property="og:description" content="Portfolio of Sharat Patnayakuni, a passionate full-stack developer dedicated to creating beautiful, functional digital experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourportfolio.com">
+  <meta name="theme-color" content="#4361ee">
+  <title>Sharat Patnayakuni | Full Stack Developer</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --text: #495057;
+      --bg: #ffffff;
+    }
+    
+    .dark-mode {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --light: #1e1e1e;
+      --dark: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    
+    h1, h2, h3 {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    nav {
+      background-color: var(--bg);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+    
+    nav.scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 0;
+    }
+    
+    .dark-mode nav.scrolled {
+      background-color: rgba(30, 30, 30, 0.95);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary) !important;
+    }
+    
+    .nav-link {
+      color: var(--text) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary) !important;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+    
+    #vanta-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    /* Fixed name color */
+    .hero h1 span {
+      color: var(--primary) !important;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .dark-mode .hero h1 span {
+      color: white !important;
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    /* Fixed profile image cropping */
+    .profile-pic {
+      object-fit: cover;
+      object-position: top center;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .profile-pic:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .project-card {
+      transition: all 0.3s ease;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      height: 100%;
+      position: relative;
+    }
+    
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(67, 97, 238, 0) 0%, rgba(67, 97, 238, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+    }
+    
+    .project-card:hover::after {
+      opacity: 1;
+    }
+    
+    .card-body {
+      padding: 2rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+    }
+    
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+    
+    .btn-primary:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
+    
+    .btn-outline-primary {
+      color: var(--primary);
+      border-color: var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline-primary:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
+    }
+    
+    section {
+      padding: 5rem 0;
+    }
+    
+    footer {
+      background-color: var(--light);
+      padding: 2rem 0;
+      color: var(--text);
+    }
+    
+    .skill-badge {
+      display: inline-block;
+      background-color: var(--light);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      margin: 0.5rem;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-badge:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
+      color: white;
+    }
+    
+    .skill-badge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .skill-badge:hover::before {
+      left: 100%;
+    }
+    
+    form .form-control {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+      transition: all 0.3s ease;
+    }
+    
+    form .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+      transform: translateY(-2px);
+    }
+    
+    .text-primary {
+      color: var(--primary) !important;
+    }
+    
+    .bg-primary {
+      background-color: var(--primary) !important;
+    }
+    
+    /* Loading Animation */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+    
+    .terminal {
+      width: 80%;
+      max-width: 700px;
+      height: 400px;
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      font-family: 'Courier New', monospace;
+      color: #f8f8f8;
+      text-align: left;
+      position: relative;
+    }
+    
+    .terminal-header {
+      background-color: #333;
+      padding: 8px 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .terminal-btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .terminal-btn.red { background-color: #ff5f56; }
+    .terminal-btn.yellow { background-color: #ffbd2e; }
+    .terminal-btn.green { background-color: #27c93f; }
+    
+    .terminal-body {
+      padding: 15px;
+      height: calc(100% - 40px);
+      overflow-y: auto;
+    }
+    
+    .terminal-line {
+      margin-bottom: 8px;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .terminal-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 18px;
+      background-color: #f8f8f8;
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 1;
+      }
+      20% {
+        transform: scale(25, 25);
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: scale(40, 40);
+      }
+    }
+    
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 250px;
+      position: relative;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    /* Floating Animations */
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* Pulse Animation */
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Social Icons */
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--light);
+      color: var(--primary);
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-5px) rotate(10deg);
+    }
+    
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-20px);}
+      60% {transform: translateY(-10px);}
+    }
+    
+    /* Section Titles */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      bottom: -10px;
+      left: 25%;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border-radius: 2px;
+      animation: expand 1s ease-out forwards;
+    }
+    
+    @keyframes expand {
+      from { width: 0; left: 50%; }
+      to { width: 50%; left: 25%; }
+    }
+    
+    /* Achievements */
+    .achievement-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* Game Container Styles */
+    #game-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    #game-toggle {
+      background: var(--primary);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    
+    #game-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    #game-window {
+      display: none;
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+    }
+    
+    .dark-mode #game-window {
+      background: var(--dark);
+      color: white;
+    }
+    
+    #game-header {
+      background: var(--primary);
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    #game-content {
+      padding: 15px;
+    }
+    
+    #snake-game {
+      width: 100%;
+      height: 200px;
+      background: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .dark-mode #snake-game {
+      background: #2d2d2d;
+    }
+    
+    .snake-segment {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+    
+    .food {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #ff4757;
+      border-radius: 50%;
+    }
+    
+    #game-score {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    #game-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .game-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    /* Rainbow animation for easter egg */
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="terminal animate__animated animate__fadeIn">
+      <div class="terminal-header">
+        <div class="terminal-btn red"></div>
+        <div class="terminal-btn yellow"></div>
+        <div class="terminal-btn green"></div>
+        <div class="ms-3 text-white">bash - Your Portfolio</div>
+      </div>
+      <div class="terminal-body" id="terminal-content">
+        <!-- Content will be added by JavaScript -->
+      </div>
+    </div>
+    <div class="mt-4 text-muted">Loading awesome portfolio...</div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Sharat Patnayakuni</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="btn btn-sm btn-outline-secondary ms-2">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div id="vanta-bg"></div>
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2 text-center">
+          <img src="dp.jpg" alt="Sharat Patnayakuni - Full Stack Developer" class="profile-pic float animate__animated animate__fadeInRight">
+        </div>
+        <div class="col-lg-6 order-lg-1 animate__animated animate__fadeInLeft">
+          <h1 class="display-4">Hi, I'm <span class="text-white">Sharat Patnayakuni</span></h1>
+          <p id="typed-text" class="fs-4 mt-3"></p>
+          <div class="mt-4">
+            <a href="#contact" class="btn btn-primary btn-lg me-2 pulse">Contact Me</a>
+            <a href="#projects" class="btn btn-outline-light btn-lg">View Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <a href="#about" class="text-white" style="font-size: 2rem;">↓</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container py-5" data-aos="fade-up">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="section-title">About Me</h2>
+        <p class="lead">I'm a passionate full-stack developer dedicated to creating beautiful, functional digital experiences.</p>
+        <p>With 5 years of experience in web development, I specialize in building responsive, user-friendly applications using modern technologies. I believe in clean code, thoughtful design, and continuous learning.</p>
+        <p>When I'm not coding, you can find me hiking, reading tech blogs, or experimenting with new frameworks.</p>
+        <div class="mt-4">
+          <a href="sharat_resume_updated.pdf" target="_blank" class="btn btn-primary me-2">Download CV</a>
+          <a href="#contact" class="btn btn-outline-primary">Hire Me</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-5">
+          <div class="bg-primary p-4 rounded text-white" data-aos="fade-left">
+            <h3 class="text-white">My Philosophy</h3>
+            <p>"Write code that is easy to delete, not easy to extend."</p>
+            <p class="mb-0">I believe in building maintainable, scalable solutions that stand the test of time while delivering immediate value.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="container py-5" id="achievements">
+    <h2 class="section-title text-center mb-5">Key Achievements</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_vybwn7df.json" background="transparent" speed="1" style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
+            <h3 class="h5 mt-3">10+ Projects</h3>
+            <p class="text-muted">Delivered successful solutions across various industries</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_0yfsb3a1.json" background="transparent" speed="1" style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
+            <h3 class="h5 mt-3">5 Years Experience</h3>
+            <p class="text-muted">Working with modern web technologies</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_obhph3sh.json" background="transparent" speed="1" style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
+            <h3 class="h5 mt-3">99% Satisfaction</h3>
+            <p class="text-muted">Client satisfaction rate across all projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-5 bg-light" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Skills & Technologies</h2>
+      <div class="text-center">
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">React.js</span>
+        <span class="skill-badge">Node.js</span>
+        <span class="skill-badge">TypeScript</span>
+        <span class="skill-badge">Express</span>
+        <span class="skill-badge">MongoDB</span>
+        <span class="skill-badge">PostgreSQL</span>
+        <span class="skill-badge">HTML5 & CSS3</span>
+        <span class="skill-badge">Bootstrap</span>
+        <span class="skill-badge">Tailwind CSS</span>
+        <span class="skill-badge">Git & GitHub</span>
+        <span class="skill-badge">Docker</span>
+        <span class="skill-badge">AWS</span>
+        <span class="skill-badge">REST APIs</span>
+        <span class="skill-badge">GraphQL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container py-5" data-aos="fade-up">
+    <h2 class="section-title text-center mb-5">Featured Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="ecom.jpg" class="card-img-top" alt="E-Commerce Platform Project">
+          <div class="card-body">
+            <h5 class="card-title">E-Commerce Platform</h5>
+            <p class="card-text">A full-featured online store with product listings, cart functionality, and secure checkout.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-primary">View Project</a>
+              <small class="text-muted">React, Node, MongoDB</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="hrms.jpeg" class="card-img-top" alt="HR Management App Project">
+          <div class="card-body">
+            <h5 class="card-title">HR Management App</h5>
+            <p class="card-text">All-in-one platform to manage employee lifecycle, automate HR tasks, and streamline workforce operations.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-primary">View Project</a>
+              <small class="text-muted">Angular, Java(SpringBoot)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="resume.jpg" class="card-img-top" alt="AI-Powered Resume Analyzer Project">
+          <div class="card-body">
+            <h5 class="card-title">AI-Powered Resume Analyzer</h5>
+            <p class="card-text">AI-based tool to parse, evaluate, and match resumes with job descriptions using NLP and ML models.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-primary">View Project</a>
+              <small class="text-muted">React.js, Python, Scikit-learn</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-outline-primary">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5 bg-light" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Project Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="ecomdash.jpg" alt="E-Commerce Dashboard Screenshot">
+          <div class="gallery-caption">
+            <h5>E-Commerce Dashboard</h5>
+            <p>Admin interface with AI analytics</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="hrms.jpeg" alt="HRMS Screenshot">
+          <div class="gallery-caption">
+            <h5>HRMS application</h5>
+            <p>AI based HRMS tool</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="appdev.jpg" alt="Web Application Screenshot">
+          <div class="gallery-caption">
+            <h5>APP Application</h5>
+            <p>APP development</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="marketing.jpg" alt="Landing Page Design">
+          <div class="gallery-caption">
+            <h5>Website development / SEO</h5>
+            <p>Marketing website design</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="ai.jpg" alt="API Documentation Screenshot">
+          <div class="gallery-caption">
+            <h5>AI / ML Solutions</h5>
+            <p>Modern solutions for your products</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="data_chart.jpg" alt="Data Visualization Dashboard">
+          <div class="gallery-caption">
+            <h5>Data Visualization</h5>
+            <p>Interactive charts dashboard</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-light py-5" id="testimonials">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Client Testimonials</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-4" data-aos="fade-right">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex mb-3">
+                <img src="https://randomuser.me/api/portraits/women/43.jpg" class="rounded-circle me-3" width="60" height="60" alt="Client">
+                <div>
+                  <h5 class="mb-0">Sarah Johnson</h5>
+                  <p class="text-muted mb-0">CEO, TechSolutions Inc.</p>
+                </div>
+              </div>
+              <p class="card-text">"Sharat delivered our e-commerce platform ahead of schedule with exceptional attention to detail. His problem-solving skills are unmatched."</p>
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4" data-aos="fade-left">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex mb-3">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="60" height="60" alt="Client">
+                <div>
+                  <h5 class="mb-0">Michael Chen</h5>
+                  <p class="text-muted mb-0">CTO, InnovateApps</p>
+                </div>
+              </div>
+              <p class="card-text">"The HR management system Sharat built revolutionized our operations. His technical expertise and communication were outstanding throughout."</p>
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Get In Touch</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Subject">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- Game Container -->
+  <div id="game-container">
+    <button id="game-toggle">🎮</button>
+    <div id="game-window">
+      <div id="game-header">
+        <span>Snake Game</span>
+        <button id="close-game" style="background:none;border:none;color:white;cursor:pointer;">✕</button>
+      </div>
+      <div id="game-content">
+        <div id="snake-game"></div>
+        <div id="game-score">Score: 0</div>
+        <div id="game-controls">
+          <button class="game-btn" id="start-game">Start</button>
+          <button class="game-btn" id="reset-game">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <div class="container">
+      <div class="mb-4">
+        <a href="https://github.com/yourusername" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/yourusername" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/yourusername" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:your.email@example.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; <span id="year"></span> Sharat Patnayakuni. All rights reserved.</p>
+      <p class="text-muted">Built by SP <i class="fas fa-heart text-danger"></i>  <i class="fas fa-coffee" ></i></p>
+      <p class="text-muted small"><i class="fas fa-eye"></i> <span id="visitor-count">1,248</span> visitors</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Terminal Loading Animation
+    const terminalLines = [
+      "> Initializing portfolio system...",
+      "> Loading components...",
+      "> Checking dependencies...",
+      "> npm install react vue node express",
+      "> Installing packages...",
+      "> added 125 packages in 5s",
+      "> Building UI components...",
+      "> Compiling styles...",
+      "> Optimizing assets...",
+      "> Almost ready...",
+      "> Launching portfolio..."
+    ];
+    
+    const terminalContent = document.getElementById('terminal-content');
+    let currentLine = 0;
+    
+    function typeTerminal() {
+      if (currentLine < terminalLines.length) {
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'terminal-line';
+        terminalContent.appendChild(lineDiv);
+        
+        let charIndex = 0;
+        const lineText = terminalLines[currentLine];
+        
+        function typeChar() {
+          if (charIndex < lineText.length) {
+            lineDiv.textContent += lineText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeChar, 5);
+          } else {
+            lineDiv.style.opacity = 1;
+            lineDiv.style.transform = 'translateY(0)';
+            currentLine++;
+            setTimeout(typeTerminal, 200);
+          }
+        }
+        
+        typeChar();
+      } else {
+        // Add blinking cursor at the end
+        const cursorDiv = document.createElement('div');
+        cursorDiv.innerHTML = '<span class="terminal-cursor"></span>';
+        terminalContent.appendChild(cursorDiv);
+        
+        // Hide loader after delay
+        setTimeout(() => {
+          document.querySelector('.loader').style.opacity = 0;
+          setTimeout(() => {
+            document.querySelector('.loader').style.display = 'none';
+          }, 500);
+        }, 1000);
+      }
+    }
+    
+    // Vanta.js Background
+    let vantaEffect;
+    function initVanta() {
+      vantaEffect = VANTA.NET({
+        el: "#vanta-bg",
+        color: 0x4361ee,
+        backgroundColor: document.body.classList.contains('dark-mode') ? 0x121212 : 0xf8f9fa,
+        points: 12,
+        maxDistance: 20,
+        spacing: 15
+      });
+    }
+    
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+      updateThemeIcon();
+      
+      // Update Vanta.js background color
+      if (vantaEffect) {
+        vantaEffect.setOptions({
+          backgroundColor: document.body.classList.contains('dark-mode') ? 0x121212 : 0xf8f9fa
+        });
+      }
+    });
+    
+    function updateThemeIcon() {
+      const icon = themeToggle.querySelector('i');
+      if (document.body.classList.contains('dark-mode')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    }
+    
+    // Visitor Counter
+    function updateVisitorCount() {
+      const baseCount = 1248;
+      const countElement = document.getElementById('visitor-count');
+      const randomIncrement = Math.floor(Math.random() * 10);
+      countElement.textContent = (baseCount + randomIncrement).toLocaleString();
+    }
+    
+    // Scroll Progress Indicator
+    window.addEventListener('scroll', () => {
+      const progressBar = document.createElement('div');
+      progressBar.id = 'progress-bar';
+      progressBar.style.position = 'fixed';
+      progressBar.style.top = '0';
+      progressBar.style.left = '0';
+      progressBar.style.height = '4px';
+      progressBar.style.backgroundColor = 'var(--primary)';
+      progressBar.style.zIndex = '9999';
+      progressBar.style.transition = 'width 0.1s ease';
+      
+      const progress = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      progressBar.style.width = `${progress}%`;
+      
+      if (!document.getElementById('progress-bar')) {
+        document.body.appendChild(progressBar);
+      } else {
+        document.getElementById('progress-bar').style.width = `${progress}%`;
+      }
+    });
+    
+    // Voice Command
+    if ('webkitSpeechRecognition' in window) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.altKey && e.key === 'v') {
+          recognition.start();
+          console.log('Voice command ready');
+        }
+      });
+      
+      recognition.onresult = (e) => {
+        const command = e.results[0][0].transcript.toLowerCase();
+        if (command.includes('about')) document.querySelector('#about').scrollIntoView();
+        if (command.includes('contact')) document.querySelector('#contact').scrollIntoView();
+        if (command.includes('projects')) document.querySelector('#projects').scrollIntoView();
+      };
+    }
+    
+    // Easter Egg (Konami Code)
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          document.body.style.background = 'linear-gradient(45deg, #ff0000, #ff7700, #ffdd00, #00ff00, #0000ff, #ff00ff)';
+          document.body.style.backgroundSize = '600% 600%';
+          document.body.style.animation = 'rainbow 5s ease infinite';
+          konamiIndex = 0;
+          
+          // Reset after 10 seconds
+          setTimeout(() => {
+            document.body.style.background = '';
+            document.body.style.animation = '';
+          }, 10000);
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    });
+    
+    // Initialize all features
+    window.addEventListener('load', () => {
+      typeTerminal();
+      
+      // Check for saved theme preference
+      if (localStorage.getItem('theme') === 'dark' || 
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark-mode');
+        updateThemeIcon();
+      }
+      
+      // Initialize animations
+      AOS.init({
+        duration: 400,
+        easing: 'ease-in-out',
+        once: true
+      });
+      
+      // Initialize typed.js
+      new Typed("#typed-text", {
+        strings: ["Full-Stack Developer", "AI/ML Enthusiast", "Problem Solver", "Tech Lover"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+      });
+      
+      // Initialize Vanta.js
+      initVanta();
+      
+      // Update visitor count
+      updateVisitorCount();
+      
+      // Set current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Navbar scroll effect
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('nav');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Gallery animations
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      galleryItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
+<script>
+    // Snake Game Implementation
+    const gameContainer = document.getElementById('game-container');
+    const gameToggle = document.getElementById('game-toggle');
+    const gameWindow = document.getElementById('game-window');
+    const closeGame = document.getElementById('close-game');
+    const snakeGame = document.getElementById('snake-game');
+    const gameScore = document.getElementById('game-score');
+    const startBtn = document.getElementById('start-game');
+    const resetBtn = document.getElementById('reset-game');
+    
+    let snake = [];
+    let food = {};
+    let direction = 'right';
+    let nextDirection = 'right';
+    let gameInterval;
+    let score = 0;
+    let gameSpeed = 150;
+    let isPaused = true;
+    const gridSize = 15;
+    
+    // Game toggle
+    gameToggle.addEventListener('click', () => {
+      gameWindow.style.display = gameWindow.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    closeGame.addEventListener('click', () => {
+      gameWindow.style.display = 'none';
+      resetGame();
+    });
+    
+    // Initialize game
+    function initGame() {
+      // Clear existing game
+      clearInterval(gameInterval);
+      snakeGame.innerHTML = '';
+      score = 0;
+      gameScore.textContent = `Score: ${score}`;
+      direction = 'right';
+      nextDirection = 'right';
+      isPaused = true;
+      startBtn.textContent = 'Start';
+      
+      // Create initial snake
+      snake = [
+        { x: 60, y: 90 },
+        { x: 45, y: 90 },
+        { x: 30, y: 90 }
+      ];
+      
+      // Create food
+      createFood();
+      
+      // Draw game
+      drawGame();
+    }
+    
+    // Create food at random position
+    function createFood() {
+      const maxX = Math.floor(snakeGame.offsetWidth / gridSize) * gridSize - gridSize;
+      const maxY = Math.floor(snakeGame.offsetHeight / gridSize) * gridSize - gridSize;
+      
+      food = {
+        x: Math.floor(Math.random() * (maxX / gridSize)) * gridSize,
+        y: Math.floor(Math.random() * (maxY / gridSize)) * gridSize
+      };
+      
+      // Make sure food doesn't appear on snake
+      const onSnake = snake.some(segment => segment.x === food.x && segment.y === food.y);
+      if (onSnake) createFood();
+    }
+    
+    // Draw game elements
+    function drawGame() {
+      // Clear previous frame
+      snakeGame.innerHTML = '';
+      
+      // Draw food
+      const foodElement = document.createElement('div');
+      foodElement.className = 'food';
+      foodElement.style.left = `${food.x}px`;
+      foodElement.style.top = `${food.y}px`;
+      snakeGame.appendChild(foodElement);
+      
+      // Draw snake segments
+      snake.forEach((segment, index) => {
+        const segmentElement = document.createElement('div');
+        segmentElement.className = 'snake-segment';
+        segmentElement.style.left = `${segment.x}px`;
+        segmentElement.style.top = `${segment.y}px`;
+        
+        // Make head slightly different
+        if (index === 0) {
+          segmentElement.style.background = 'var(--secondary)';
+          segmentElement.style.borderRadius = '5px';
+        }
+        
+        snakeGame.appendChild(segmentElement);
+      });
+    }
+    
+    // Move snake
+    function moveSnake() {
+      if (isPaused) return;
+      
+      // Update direction
+      direction = nextDirection;
+      
+      const head = { ...snake[0] };
+      
+      // Move head based on direction
+      switch (direction) {
+        case 'up':
+          head.y -= gridSize;
+          break;
+        case 'down':
+          head.y += gridSize;
+          break;
+        case 'left':
+          head.x -= gridSize;
+          break;
+        case 'right':
+          head.x += gridSize;
+          break;
+      }
+      
+      // Check collision with walls
+      if (
+        head.x < 0 ||
+        head.x >= snakeGame.offsetWidth ||
+        head.y < 0 ||
+        head.y >= snakeGame.offsetHeight
+      ) {
+        gameOver();
+        return;
+      }
+      
+      // Check collision with self (skip head)
+      if (snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y)) {
+        gameOver();
+        return;
+      }
+      
+      // Add new head
+      snake.unshift(head);
+      
+      // Check if snake ate food
+      if (head.x === food.x && head.y === food.y) {
+        score++;
+        gameScore.textContent = `Score: ${score}`;
+        createFood();
+        
+        // Increase speed every 5 points
+        if (score % 5 === 0) {
+          gameSpeed = Math.max(50, gameSpeed - 10);
+          clearInterval(gameInterval);
+          gameInterval = setInterval(gameLoop, gameSpeed);
+        }
+      } else {
+        // Remove tail if no food eaten
+        snake.pop();
+      }
+      
+      drawGame();
+    }
+    
+    // Game loop
+    function gameLoop() {
+      moveSnake();
+    }
+    
+    // Reset game
+    function resetGame() {
+      clearInterval(gameInterval);
+      initGame();
+    }
+    
+    // Game over
+    function gameOver() {
+      clearInterval(gameInterval);
+      isPaused = true;
+      startBtn.textContent = 'Start';
+      alert(`Game Over! Your score: ${score}`);
+    }
+    
+    // Start/pause game
+    startBtn.addEventListener('click', () => {
+      if (isPaused) {
+        isPaused = false;
+        startBtn.textContent = 'Pause';
+        gameInterval = setInterval(gameLoop, gameSpeed);
+      } else {
+        isPaused = true;
+        startBtn.textContent = 'Resume';
+        clearInterval(gameInterval);
+      }
+    });
+    
+    // Reset game
+    resetBtn.addEventListener('click', resetGame);
+    
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+      if (gameWindow.style.display !== 'block') return;
+      
+      switch (e.key) {
+        case 'ArrowUp':
+          if (direction !== 'down') nextDirection = 'up';
+          break;
+        case 'ArrowDown':
+          if (direction !== 'up') nextDirection = 'down';
+          break;
+        case 'ArrowLeft':
+          if (direction !== 'right') nextDirection = 'left';
+          break;
+        case 'ArrowRight':
+          if (direction !== 'left') nextDirection = 'right';
+          break;
+        case ' ':
+          // Space to pause/resume
+          if (isPaused) {
+            isPaused = false;
+            startBtn.textContent = 'Pause';
+            gameInterval = setInterval(gameLoop, gameSpeed);
+          } else {
+            isPaused = true;
+            startBtn.textContent = 'Resume';
+            clearInterval(gameInterval);
+          }
+          break;
+      }
+    });
+    
+    // Initialize game on load
+    window.addEventListener('load', initGame);
+  </script>
+</body>
+</html>
